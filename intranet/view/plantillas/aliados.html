@@ -1,0 +1,72 @@
+<script src="js/brain.js"></script>
+<h2>Registrar Nuevo Aliado</h2>	<br>
+	<form onsubmit="nuevoAliado(); return false;">
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Nombre del Aliado</label>
+		<input type="text" class="form-control" id="intAliado" placeholder="Nombre del Aliado" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Enlace Web</label>
+		<input type="text" class="form-control" id="intenlace" placeholder="Enlace de la P&aacute;gina Web" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Descripci&oacute;n:</label>
+		<textarea placeholder="Descripci&oacute;n" id="intDescrip" class="form-control" rows="3" required></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-success">Ingresar Aliado en Web</button>
+	  <a class="btn btn-warning" id="btnListarAliados">Administrar Aliados</a>
+	</form>
+	
+	<!--Ventanas emergentes-->
+	
+	<!--confirmar estado de registro nuevo aliado-->
+	<div class="modal fade" id="aliadoEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Registro de Nuevo Aliado</h4>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="aliadoResultado"><!--Aquí se encontrará el resultado--></h4>
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="recargar();" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--confirmar estado de registro nuevo aliado-->
+	
+	<!--Listar los aliados registradas en la base de datos-->
+	<div class="modal fade" id="listarAliados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Aliados Registradas</h4>
+		  </div>
+		  <div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Enlace</td>
+						<td>Estado</td>
+						<td>Acci&oacute;n</td>
+					</tr>
+				</thead>
+				<tbody id="tablaAliados">
+			    <!--contenido ingresado por jquery una vez php responda con la información de la base de datos-->
+				</tbody>
+			</table>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--Fin Listar las actividades registradas en la base de datos-->
+	
+	

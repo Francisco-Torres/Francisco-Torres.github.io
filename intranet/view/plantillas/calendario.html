@@ -1,0 +1,48 @@
+<script src="js/brain.js"></script>
+<h2>Calendario de Actividades</h2>
+	<br>
+	  <script>cargarCalendario()</script>
+	  <div id="conteniedoActviidad">
+			<div class="row" id="calendarioActividades">
+				  <!--aquí será cargado el calendario dinámico-->
+			</div>
+	  </div>
+		  
+	<!--Ventanas emergentes-->
+	
+	<!--confirmar estado de registro nuevo Usuario-->
+	<div class="modal fade" id="registroActividad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Registro en Acitvidad</h4>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="regActividad"><!--Aquí se encontrará el resultado--></h4>
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="recargar();" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--confirmar estado de registro nuevo Usuario-->
+	<!--información detallada de la actividad-->
+	<div class="modal fade" id="dActividad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Detalle de Actividad</h4>
+		  </div>
+		  <div class="modal-body"id="detActividad">
+			
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--información detallada de la actividad-->

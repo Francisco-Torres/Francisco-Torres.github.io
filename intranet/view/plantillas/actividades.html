@@ -1,0 +1,93 @@
+<script src="js/brain.js"></script>
+<h2>Registrar Nueva Actividad</h2>
+	<br>
+	<form onsubmit="nuevaActividad(); return false;">
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Lugar</label>
+		<input type="text" class="form-control" id="intLugar" placeholder="Lugar" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Fecha Inicio:</label>
+		<input type="datetime-local" class="form-control" id="intFecha1" placeholder="Ano/mes/dia Horas:minutos" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Fecha Terminaci&oacute;n:</label>
+		<input type="datetime-local" class="form-control" id="intFecha2" placeholder="Ano/mes/dia Horas:minutos" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Estado:</label>
+		<select id="intEstado" class="form-control">
+			<option value="1">Activa</option>
+			<option value="1">Inactiva</option>
+		</select>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Asistentes M&iacute;nimos:</label>
+		<input type="number" class="form-control" id="intMinAsis" placeholder="N&uacute;meto de Asistentes" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Asistentes M&aacute;ximos:</label>
+		<input type="number" class="form-control" id="intMaxAsis" placeholder="N&uacute;meto de Asistentes" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Descripci&oacute;n:</label>
+		<textarea placeholder="Descripci&oacute;n" id="intDescrip" class="form-control" rows="3" required></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-success">Registrar Actividad</button>
+	  <a class="btn btn-warning" id="btnListarActividades">Administrar Actividades</a>
+	</form>
+	
+	<!--Ventanas emergentes-->
+	
+	<!--confirmar estado de registro nueva actividad-->
+	<div class="modal fade" id="actividadEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Registro de Nueva Actividad</h4>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="actividadResultado"><!--Aquí se encontrará el resultado del insertar actividad--></h4>
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="recargar();" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--Fin confirmar estado de registro nueva actividad-->
+	
+	<!--Listar las actividades registradas en la base de datos-->
+	<div class="modal fade bs-example-modal-lg" id="listarActividades" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	   <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Actividades Registradas</h4>
+		  </div>
+		  <div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Fecha</td>
+						<td>Lugar</td>
+						<td>Observaci&oacute;n</td>
+						<td>Estado</td>
+						<td>Acci&oacute;n</td>
+					</tr>
+				</thead>
+				<tbody id="tablaActividades">
+			    <!--contenido ingresado por jquery una vez php responda con la información de la base de datos-->
+				</tbody>
+			</table>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--Fin Listar las actividades registradas en la base de datos-->
+	
+	

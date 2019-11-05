@@ -1,0 +1,68 @@
+<script src="js/brain.js"></script>
+<h2>Registrar Nueva Oraci&oacute;n</h2>
+	<br>
+	<form onsubmit="nuevaOracion(); return false;">
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Titulo de la Oraci&oacute;n</label>
+		<input type="text" class="form-control" id="intTitulo" placeholder="Titulo de la Oraci&oacute;n" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Descripci&oacute;n:</label>
+		<textarea placeholder="Descripci&oacute;n" id="intDescrip" class="form-control" rows="3" required></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-success">Ingresar Oraci&oacute;n en Web</button>
+	  <a class="btn btn-warning" id="btnListarOraciones">Administrar Oraciones</a>
+	</form>
+	
+	<!--Ventanas emergentes-->
+	
+	<!--confirmar estado de registro nueva oración-->
+	<div class="modal fade" id="oracionEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Registro de Nueva Oraci&acute;n</h4>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="oracionResultado"><!--Aquí se encontrará el resultado--></h4>
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="recargar();" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--confirmar estado de registro nueva oración-->
+	
+	<!--Listar las oraciones registradas en la base de datos-->
+	<div class="modal fade" id="listarOraciones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Aliados Registradas</h4>
+		  </div>
+		  <div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Titulo</td>
+						<td>Estado</td>
+						<td>Acci&oacute;n</td>
+					</tr>
+				</thead>
+				<tbody id="tablaOraciones">
+			    <!--contenido ingresado por jquery una vez php responda con la información de la base de datos-->
+				</tbody>
+			</table>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--Listar las oraciones registradas en la base de datos-->
+	
+	

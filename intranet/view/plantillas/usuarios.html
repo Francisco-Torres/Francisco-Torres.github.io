@@ -1,0 +1,111 @@
+<script src="js/brain.js"></script>
+<h2>Registrar Usuarios</h2>
+	<br>
+	<form onsubmit="nuevousuario(); return false;">
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Documento</label>
+		<input type="int" class="form-control" id="intDocumento" placeholder="Documento" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Usuario</label>
+		<input type="text" class="form-control" id="intUsuario" placeholder="Usuario" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Clave</label>
+		<input type="password" class="form-control" id="intClave" placeholder="Clave" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Primer Nombre</label>
+		<input type="text" class="form-control" id="intNombre1" placeholder="Primer Nombre" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Segundo Nombre</label>
+		<input type="text" class="form-control" id="intNombre2" placeholder="Segundo Nombre" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Primer Apellido</label>
+		<input type="text" class="form-control" id="intApellido1" placeholder="Primer Apellido" required>
+	  </div>
+	  	  <div class="form-group">
+		<label for="exampleInputEmail1">Segundo Apellido</label>
+		<input type="text" class="form-control" id="intApellido2" placeholder="Segundo Apellido" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Direcci&oacute;n</label>
+		<input type="text" class="form-control" id="intDireccion" placeholder="Direcci&oacute;n" required>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Tel&eacute;fono</label>
+		<input type="text" class="form-control" id="intTelefono1" placeholder="Tel&eacute;fono" required>
+	  </div>
+	  	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Tel&eacute;fono 2</label>
+		<input type="text" class="form-control" id="intTelefono2" placeholder="Tel&eacute;fono 2" required>
+	  </div>
+	  	  </div>
+	  <div class="form-group">
+		<label for="exampleInputEmail1">Tipo</label>
+		<select class="form-control" id="intTipo">
+		    <option value="1">......</option>
+			<option value="1">Administrador</option>
+			<option value="2">Amigo de la Fundaci&oacute;n</option>
+		</select>
+	  </div>
+	  <button type="submit" class="btn btn-success">Registrar Usuario</button>
+	  <a class="btn btn-warning" id="btnListarUsuarios">Administrar Usuarios</a>
+	</form>
+	
+	<!--Ventanas emergentes-->
+	
+	<!--confirmar estado de registro nuevo Usuario-->
+	<div class="modal fade" id="UsuarioEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Nuevo Usuario</h4>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="resultadoUsuario"><!--Aquí se encontrará el resultado--></h4>
+		  </div>
+		  <div class="modal-footer">
+			<button onclick="recargar();" type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--confirmar estado de registro nuevo Usuario-->
+	
+	<!--Listar los usuarios registrados en la base de datos-->
+	<div class="modal fade bs-example-modal-lg" id="listarUsuarios" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	   <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Usuarios Del Sistema</h4>
+		  </div>
+		  <div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Usuario</td>
+						<td>Clave</td>
+						<td>Tipo</td>
+					</tr>
+				</thead>
+				<tbody id="tablaUsuarios">
+			    <!--contenido ingresado por jquery una vez php responda con la información de la base de datos-->
+				</tbody>
+			</table>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--Listar los usuarios registrados en la base de datos-->
+	
+	
